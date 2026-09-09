@@ -98,8 +98,9 @@ covers.
 
 ## Live deployment status
 
-**Live-verified.** Deployed to GenLayer Studio and confirmed via two real,
-finalized transactions covering two different final-verdict categories.
+**Live-verified.** Deployed to GenLayer Studio and confirmed via four
+real, finalized transactions covering four different final-verdict
+categories.
 
 - **Deployed contract address (current, official):**
   `0xC9E10e8212685F5767126C6AEE715E2B046F5A8d`
