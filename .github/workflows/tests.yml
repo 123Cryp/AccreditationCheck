@@ -1,0 +1,46 @@
+name: Offline test suite
+
+# Runs contract.py's offline test suite (pytest against the genlayer_stub)
+# on every push and pull request. This does NOT touch GenLayer Studio or
+# any live network — it only verifies contract.py's logic against the
+# offline stub described in ARCHITECTURE.md / TESTING.md.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    name: pytest (offline stub)
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run offline test suite
+        run: pytest tests/ -v
+
+      - name: Summarize result
+        if: always()
+        run: |
+          echo "### Offline test suite result" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "See the job log above for the full pytest output." >> "$GITHUB_STEP_SUMMARY"
+          echo "This workflow only exercises contract.py against the offline" >> "$GITHUB_STEP_SUMMARY"
+          echo "genlayer_stub — it does not deploy to or query GenLayer Studio." >> "$GITHUB_STEP_SUMMARY"
