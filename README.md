@@ -1,10 +1,6 @@
 # AccreditationCheck
 
-[![Offline test suite](https://github.com/OWNER/REPO/actions/workflows/tests.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/tests.yml)
-
-> Replace `OWNER/REPO` above with this repo's actual GitHub path once
-> pushed (e.g. `yourusername/AccreditationCheck`) — the badge won't render
-> correctly until then.
+[![Offline test suite](https://github.com/123Cryp/AccreditationCheck/actions/workflows/tests.yml/badge.svg)](https://github.com/123Cryp/AccreditationCheck/actions/workflows/tests.yml)
 
 A GenLayer Intelligent Contract that verifies a claimed professional
 credential (a license number, certification ID, or accreditation number)
@@ -14,6 +10,8 @@ can never substitute for the claimed ID actually appearing on it.
 
 Submitted for the GenLayer Portal Builder track, Intelligent Contracts
 category.
+
+**Repository:** https://github.com/123Cryp/AccreditationCheck
 
 ## The problem
 
